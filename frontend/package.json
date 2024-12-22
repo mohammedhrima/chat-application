@@ -11,11 +11,15 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
+    "buffer": "^6.0.3",
+    "emoji-picker-react": "^4.12.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.0",
     "react-toastify": "^11.0.2",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "uuid": "^11.0.3",
+    "web-vitals": "^4.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

@@ -38,9 +38,20 @@ export async function Signup(req, res, next) {
 export async function Clear(req, res, next) {
   try {
     const result = await User.deleteMany({});
-    
+
     return res.json({ status: true, msg: `${result.deletedCount} users deleted` });
   } catch (error) {
     next(error);
   }
 }
+
+export async function setAvatar(req, res, next) {
+  try {
+    const userId = req.params.id;
+    const avatarImage = req.body.image;
+    const userData = await User.findByIdAndUpdate(userId, { isAvatarImageSet: true, avatarImage }, { new: true });
+    return res.json({ isSet: userData.isAvatarImageSet, image: userData.avatarImage });
+  } catch (error) {
+    next(error);
+  }
+};
